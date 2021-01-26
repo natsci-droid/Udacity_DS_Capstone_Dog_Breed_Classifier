@@ -158,7 +158,7 @@ Thus InceptionV3 is more suitable for this task. This model likely performs bett
 
 Examples of the final algorithm incorporating all of the tasks are shown below. These are obtained from Unsplash or private images.
 
-<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog1.jpg  width="400"> 
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog1.jpg  width="400">
 Dog is a Dachshund  
 <img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog2.jpg  width="400"> 
 Dog is an American eskimo dog  
@@ -176,8 +176,6 @@ Person resembles a Greyhound
 Person resembles a Dachshund  
 <img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Cat.jpg  width="400"> 
 No face detected. Please make sure face is clear or try another image.  
-  
-  
 The algorithm correctly identifies dogs and people. No dog or person is incorrectly detected in the cat picture. Breeds resemble the labeled breed, but without knowledge of the actual breed it is difficult to accurately assess. The yellow labrador is classified as a golden labrador, which is very close, and the dashund is correctly classified. People are identified as a greyhound for 3 out of 4 images, despite few similarities. This could potentially be improved if more people are used in the pre-training.
 
 The model would likely need more data to train to higher accuracy, especialy to distinguish between similar breeds.
