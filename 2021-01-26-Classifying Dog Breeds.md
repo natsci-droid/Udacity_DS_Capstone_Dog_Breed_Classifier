@@ -141,10 +141,10 @@ The human face detector was validated against 100 sample human images and 100 sa
 
 It is not expected that an algorithm would achieve perfect performance on all images. In order to mitigate user frustration, advice can be provided to provide clear images of faces in the event the algorithm fails.
 
-### Dog Detector
+### 2) Dog Detector
 The dog detector was also validated against the same 100 sample human images and 100 sample dog images. Of the human images, a dog was detected in 0%, whereas a dog was detected in 100% of the dog data set. Given the higher performance over the human classifier, this should be used before the human classifier. The improved performance is likely to be due to the vast data set and the ability of deep learning to generalise on unseen data.
 
-### Dog Breed Classifier
+### 3) Dog Breed Classifier
 When trained from scratch the CNN achieves a classification accuracy of 1.1%.
 
 When trained using the pre-trained VGG model, a classification accuracy of 42.1% is achieved.
@@ -177,8 +177,33 @@ The model would likely need more data to train to higher accuracy, especialy to 
 There may also be mixed breeds, which could confuse the model.
 
 ## Reflection
-The full solution can be summarised as:
+The final algorithm can be summarised as:
+1) Determine if a dog is present
+	1a) Preprocess by converting to 4D tensor, switching channels to BGR and normalising
+	1b) Feed into ResNet50 pretrained model to detect dog
+2) If a dog is not present, determine if a human face is present
+	2a) Convert image to greyscale
+	2b) Apply OpenCV's Haar feature-based cascade classifier to detect human face.
+3) If a dog or person is present, classify the breed in the image
+	3a) Rescale image and convert to 4D tensor
+	3b) Using model trained on data (pretrained Inception3), predict class
+4) Return message to user:
+	If dog: return breed
+	If person: return breed resembles
+	If neither: return error message
 
+Overall, this project was achieved by:
+1) Identifying a relevant problem
+2) Importing and analysing the data
+3) Splitting the problem into separate problems
+4) Considering existing implementations where appropriate
+5) Testing suitability of existing implementations
+6) Training the bespoke dog breed clssifier from scratch
+7) Adapting to use transfer earning to improve the results
+8) Experimenting with different architectures and parameters to tune models
+9) Combining the best models into the final algorithm as detailed above
+10) Testing on new data
+11) Evaluating project and contemplating possible improvements
 
 Unfortunately it was not possible to compare results from Xception due to the provided trained weights being larger than the workspace provided. Uploaded files took longer than training the models, which was a major frustration, but was still faster than training models from scatch.
 
