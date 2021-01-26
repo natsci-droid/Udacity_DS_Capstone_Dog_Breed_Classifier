@@ -44,7 +44,7 @@ There are two data sets provided with this project, a set of dog images and a se
 
 In total, there are 8351 dog images in 133 different breeds. 6680 are used for training, 835 for validation and 836 in the test set. There are 13233 human images to use to train the face detector.
 
-<img src="https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/Brittany_02625.jpg" width="100" height="100">
+<img src=![image1] width="100" height="100">
 ![Example Person][image2]
 
 Given that the purpose is to classify dog breeds, it is important to examine the classes of this data set. The bar chart below shows the number of images in each class. Blue is the larger training set and brown the smaller validation data.
