@@ -1,8 +1,8 @@
 # Classifying Dog Breeds
 
 [image0]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog3.jpg "Dog"
-[image1]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/Brittany_02625.jpg  =250x "Example Dog"
-[image2]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/example_person.png  =250x "Example Person"
+[image1  =250x]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/Brittany_02625.jpg "Example Dog"
+[image2  =250x]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/example_person.png "Example Person"
 [image3]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/classes.png "Class Numbers"
 [image4]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/face_detection.png "Face Detection"
 [image5]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/InceptionV3_training.png "Training"
