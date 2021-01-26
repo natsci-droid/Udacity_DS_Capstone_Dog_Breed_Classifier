@@ -5,15 +5,15 @@
 [image2]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/example_person.png "Example Person"
 [image3]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/classes.png "Class Numbers"
 [image4]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/face_detection.png "Face Detection"
-[image5]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/InceptionVstraining.png "Training"
-[image6]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog1.png "Dog 1"
-[image7]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog2.png "Dog 2"
-[image8]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog3.png "Dog 3"
-[image9]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog4.png "Dog 4"
-[image10]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person1.png "Person 1"
-[image11]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person2.png "Person 2"
-[image12]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person3.png "Person 3"
-[image13]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person4.png "Person 4"
+[image5]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/InceptionV3_training.png "Training"
+[image6]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog1.jpg "Dog 1"
+[image7]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog2.jpg "Dog 2"
+[image8]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog3.jpg "Dog 3"
+[image9]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog4.jpg "Dog 4"
+[image10]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person1.jpg "Person 1"
+[image11]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person2.jpg "Person 2"
+[image12]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person3.jpg "Person 3"
+[image13]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person4.jpg "Person 4"
 [image14]: https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Cat.png "Cat"
 
 
@@ -22,7 +22,7 @@
 ## Project Overview
 Advances in Computer Vision mean that computers can now perform image recognition and classification on real images wth little preprocessing. This project uses a Convolutional Neural Network (CNN) to classify dog breeds if presented with an image of a dog, or identifies which dog breed a person most resembles if presented with a clear image of a face.
 
-The data used are provided by Udacity, under the [Data Science Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025) final capstone prject. These include:
+The data used are provided by Udacity, under the [Data Science Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025) final capstone project. These include:
 * dog images, split into train, validation and test partitions, provided by Udacity
 * human images data set, provided by Udacity
 * [ImageNet](http://www.image-net.org/), a heierarchical image database consisting of hundreds of images for each class of thousands of classes, thus very popular for training Convolutional Neural Networks.
@@ -40,7 +40,9 @@ A separate classifier is required for each step, trained for the specific purpos
 The model performance will be measured by calculating the accuracy on test data, which has been witheld from the training and validation process.
 
 ## Data Exploration
-There are two data sets provided with this project, a set of dog images and a set of human images. Below are example images from this data set. In total, there are 8351 dog images in 133 different breeds. 6680 are used for training, 835 for validation and 836 in the test set. There are 13233 human images to use to train the face detector.
+There are two data sets provided with this project, a set of dog images and a set of human images. Below are example images from this data set.
+
+In total, there are 8351 dog images in 133 different breeds. 6680 are used for training, 835 for validation and 836 in the test set. There are 13233 human images to use to train the face detector.
 
 ![Example Dog][image1]
 ![Example Person][image2]
@@ -70,7 +72,7 @@ Face detection algorithms are a subject of active research, so there are many so
 
 The OpenCV face detection algorithm is chosen because it is fully integrated into Python and achieves reasonable results based on validation against test data. Since the detector is already trained, the human face data does not need to be split into train, test and validation sets.
 
-### Dog Detector
+### 2) Dog Detector
 A pre-trained model is used to detect dogs in imagery, using the [ResNet-50 model](http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006) trained on [ImageNet](http://www.image-net.org/). 
 
 #### Data Preprocessing
@@ -78,7 +80,7 @@ Data required preprocessing before it can be passed to the pre-trained model. Th
 1) Load image and convert to 3D tensor with dimensions 224 x 224 x 3. The first two dimensions are the spatial pixels of the image and the third is the number of chanels for a colour image.
 2) Convert to 4D tensor. The model expects a 4D tensor, where the first dimension is the batch number. For single images, this is achieved with a shape of 1 x 224 x 224 x 3. 
 3) The channels are then converted from RGB to BGR using Keras' preprocess_input function in the keras.applications.resnet50 library
-4) The same preprocess_input functio also normalises the images by subtracting the mean from every pixel in each image
+4) The same preprocess_input function also normalises the images by subtracting the mean from every pixel in each image
 
 #### Implementation
 With the model and pre-trained weights loaded, only the predict function need be called to classify the images. This returns a class label, many of which are dog classes. Labels 268 to 11 of ImageNet are dog classes, so if any of these are returned, a dog is detected. A wrap around function tests these classes and returns True if one is present.
@@ -86,7 +88,7 @@ With the model and pre-trained weights loaded, only the predict function need be
 #### Refinement
 Since the pre-trained model achieves high results, there is no need for refinement. However, if needed, this could be achieved by testing different models with different training data. Given that ImageNet contains many examples of dogs, the model is expected to perform well on dog detection.
 
-### Dog Breed Classifier
+### 3) Dog Breed Classifier
 
 #### Data Preprocessing
 Data are rescaled by dividing each pixel by the maximum value possible (255) before converting to 4D tensors, as with the dog detector.
@@ -111,31 +113,31 @@ global_average_pooling2d_1 ( (None, 64)                0
 _________________________________________________________________
 dense_1 (Dense)              (None, 133)               8645      
 =================================================================
-Total params: 28,037
-Trainable params: 28,037
+Total params: 28,037,
+Trainable params: 28,037,
 Non-trainable params: 0
 
 A few different architectures were tried and the best selected based on the validation score. Two convoltional layers were found to achieve higher validation accuracy than three, in addition to training faster. Max pooling layers are used after each convolutional layer since these reduce the number of parameters needed to be learnt and abstract the information in the previous layer.
 
 Dropout layers were added to help reduce overfitting and improve training of all network nodes.
 
-32 features were selected in the first convolutional layer, increasing to 64 in the second convolutional layer. Given the large image size, more features are advantageous to capture more information. The dense layer requires 133 features since it must match the number of classes i.e. dog breeds.
+For the first convolutional layer, 32 features were selected, increasing to 64 in the second convolutional layer. Given the large image size, more features are advantageous to capture more information. The dense layer requires 133 features since it must match the number of classes i.e. dog breeds.
 
 ReLU activation functions are used to overcome the vanishing gradient problem and speed up training.
 
 #### Refinement - Transfer Learning
-To improve the classification performance, a pre-trained model is used, which has been trained on vast amounts of ImageNet data. Thus the untrained layers of the model only need to learn the differences between classes rather than how to extract lower level features such as lines and corners etc. Since ImageNet already has different classes of dog, this model is close to the application, so should yeild good results.
+To improve the classification performance, a pre-trained model is used, which has been trained on vast amounts of ImageNet data. Thus the untrained layers of the model only need to learn the differences between classes rather than how to extract lower level features such as lines and corners etc. Since ImageNet already has different classes of dog, this model is close to the application, so should yield good results.
 
 Two different models are trained and compared: VGG16 and InceptionV3, using weights provided by Udacity.
 
-InceptionV3 is selected because it is a more recent model with smaller sized weights, i.e. fewer parameters, compared to VGG19 and ResNet50 according to [this post](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/). They also achieve higher accuracy than ResNet50 in [this test](https://www.kaggle.com/gowrishankarin/resnet50-vs-inceptionv3-vs-xception-vs-nasnet).Unfortunately, the weights provided for Xception by Udacity were too large for the workspace provided, so could not be compared.
+InceptionV3 is selected because it is a more recent model with smaller sized weights, i.e. fewer parameters, compared to VGG19 and ResNet50 according to [this post](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/). They also achieve higher accuracy than ResNet50 in [this test](https://www.kaggle.com/gowrishankarin/resnet50-vs-inceptionv3-vs-xception-vs-nasnet). Unfortunately, the weights provided for Xception by Udacity were too large for the workspace provided, so could not be compared.
 
 A single dense layer is added to classify the images into dog breeds for both models, since there are not a huge number of images compared to ImageNet and this avoids overfitting.
 
 ## Results
 
 ### 1) Human Face Detector
-The human face detector was validated against 100 sample human images and 100 sample dog images. 100% of human images were detected with a face, but also 11% of dog images. This means that dog images could be classified as human an incorrectly treated by the application. In order to avoid this, the human face detctor could only be applied after the dog detector.
+The human face detector was validated against 100 sample human images and 100 sample dog images. 100% of human images were detected with a face, but also 11% of dog images. This means that dog images could be classified as human an incorrectly treated by the application. In order to avoid this, the human face detctor could be applied after the dog detector.
 
 It is not expected that an algorithm would achieve perfect performance on all images. In order to mitigate user frustration, advice can be provided to provide clear images of faces in the event the algorithm fails.
 
