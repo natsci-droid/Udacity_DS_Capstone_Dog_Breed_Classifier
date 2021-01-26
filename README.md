@@ -13,7 +13,7 @@ The data used are provided by Udacity, under the [Data Science Nanodegree](https
 * human images data set, provided by Udacity
 * [ImageNet](http://www.image-net.org/), a heierarchical image database consisting of hundreds of images for each class of thousands of classes, thus very popular for training Convolutional Neural Networks.
 
-The full project is written in the [Blog post](https://natsci-droid.github.io/Classifying Dog Breeds/)
+The full project is written in the [Blog post](https://natsci-droid.github.io/Classifying-Dog-Breeds/)
 
 ## Problem Statement
 The goal is to build an algorithm that takes an image path, identifies whether a human or a dog is present, then classifies that image by dog breed. Three steps are required:
@@ -33,7 +33,7 @@ In total, there are 8351 dog images in 133 different breeds. 6680 are used for t
 
 
 ## Instructions
-The jupyter notebook contains the code used for the [blog post](https://natsci-droid.github.io/Classifying Dog Breeds/).
+The jupyter notebook contains the code used for the [blog post](https://natsci-droid.github.io/Classifying-Dog-Breeds/).
 
 The extract_bottleneck_features.py script is required to extract features for retraining the dog classification model. This is not required to run the classifier algorithm, only to retrain.
 
