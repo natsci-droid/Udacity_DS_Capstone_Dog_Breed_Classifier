@@ -44,8 +44,8 @@ There are two data sets provided with this project, a set of dog images and a se
 
 In total, there are 8351 dog images in 133 different breeds. 6680 are used for training, 835 for validation and 836 in the test set. There are 13233 human images to use to train the face detector.
 
-<img src=![image1] width="100" height="100">
-![Example Person][image2]
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/Brittany_02625.jpg  height="400">
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/example_person.png  height="400">
 
 Given that the purpose is to classify dog breeds, it is important to examine the classes of this data set. The bar chart below shows the number of images in each class. Blue is the larger training set and brown the smaller validation data.
 
@@ -159,15 +159,15 @@ Thus InceptionV3 is more suitable for this task. This model likely performs bett
 
 Examples of the final algorithm incorporating all of the tasks are shown below. These are obtained from Unsplash or private images.
 
-![Dog 1][image6] Dog is a Dachshund
-![Dog 2][image7] Dog is an American eskimo dog
-![Dog 3][image8] Dog is a Border collie
-![Dog 4][image9] Dog is a Golden retriever
-![Person 1][image10] Person resembles a Greyhound
-![Person 2][image11] Person resembles a Greyhound
-![Person 3][image12] Person resembles a Greyhound
-![Person 4][image13] Person resembles a Dachshund
-![Cat][image14] No face detected. Please make sure face is clear or try another image.
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog1.jpg  width="400"> Dog is a Dachshund
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog2.jpg  width="400"> Dog is an American eskimo dog
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog3.jpg  width="400"> Dog is a Border collie
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Dog4.jpg  width="400"> Dog is a Golden retriever
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person1.jpg  width="400"> Person resembles a Greyhound
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person2.jpg  width="400"> Person resembles a Greyhound
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person3.jpg  width="400"> Person resembles a Greyhound
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Person4.jpg  width="400"> Person resembles a Dachshund
+<img src=https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier/blob/main/sample_images/Cat.jpg  width="400"> No face detected. Please make sure face is clear or try another image.
 
 
 The algorithm correctly identifies dogs and people. No dog or person is incorrectly detected in the cat picture. Breeds resemble the labeled breed, but without knowledge of the actual breed it is difficult to accurately assess. The yellow labrador is classified as a golden labrador, which is very close, and the dashund is correctly classified. People are identified as a greyhound for 3 out of 4 images, despite few similarities. This could potentially be improved if more people are used in the pre-training.
