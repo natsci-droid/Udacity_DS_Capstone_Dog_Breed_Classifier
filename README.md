@@ -87,6 +87,5 @@ pillow==4.0.0
 ipykernel==4.6.1  
 tensorflow==1.0.0  
 
-##
-Acknowledgements
+## Acknowledgements
 Data ad project are provided by Udacity, with additional data from ImageNet and Unsplash.
